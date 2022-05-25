@@ -5,9 +5,120 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="description" content="" />
+  
+  <style>
+  
+    body {
+        font-family: "Lato", sans-serif;
+    }
+
+    .sidenav {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #111;
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px;
+    }
+
+    .sidenav a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+    }
+
+    .sidenav a:hover {
+        color: #f1f1f1;
+    }
+
+    .sidenav .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+    }
+
+    @media screen and (max-height: 450px) {
+        .sidenav {
+            padding-top: 15px;
+        }
+
+    .sidenav a {
+        font-size: 18px;
+        }
+    }
+   </style>
 </head>
 <body>
-    <div><a href="Home.html">Home</a></div>
-    <div><embed src='hyponatremia.png'></div>
+  <div id="mySidenav" class="sidenav">
+    <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category">
+    <ul id="myMenu">
+        <li><a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a></li>
+        <li><a href="Home.html">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Adult Well</a></li>
+        <li><a href="#">Diabetes</a></li>
+        <li><a href="hyponatremia.html">Hyponatremia</a></li>
+        <li><a href="#">Obesity</a></li>
+        <li><a href="#">Well Child</a></li>
+        <li><a href="Hypertension_Pregnancy.html">Hypertension In Pregnancy</a></li>
+        <li><a href="#">Lor Ipsum</a></li>
+        <li><a href="#">Lor Ipsum</a></li>
+        <li><a href="#">Lor Ipsum</a></li>
+        <li><a href="#">Lor Ipsum</a></li>
+        <li><a href="#">Lor Ipsum</a></li>
+        <li><a href="#">Lor Ipsum</a></li>
+        <li><a href="#">Lor Ipsum</a></li>
+        <li><a href="#">Lor Ipsum</a></li>
+        <li><a href="#">Lor Ipsum</a></li>
+        <li><a href="#">Lor Ipsum</a></li>
+        <li><a href="#">Lor Ipsum</a></li>
+        <li><a href="#">Lor Ipsum</a></li>
+        <li><a href="#">Lor Ipsum</a></li>
+    </ul>
+  </div>
+
+  <div style = "background-color: #07485c; padding-bottom: 20px;">
+    <span style="font-size:30px;cursor:pointer; color: antiquewhite;" onclick="openNav()">&#9776; Menu</span>
+    <div>
+    <center><h2 style="color: antiquewhite;"><font face = "Serif" size = 18>Hyponatremia</font></h2></center>
+    </div>
+    </div>
+ <!-- <div><a href="Home.html">Home</a></div> -->
+  <div style="padding-top: 20px;"><center><embed src='hyponatremia.png' style="width: 50%; height: 50%;"></center></div>
+  
+  <script>
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+    }
+
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+    }
+
+    function myFunction() {
+    var input, filter, ul, li, a, i;
+        input = document.getElementById("mySearch");
+        filter = input.value.toUpperCase();
+        ul = document.getElementById("myMenu");
+        li = ul.getElementsByTagName("li");
+        for (i = 0; i < li.length; i++) {
+            a = li[i].getElementsByTagName("a")[0];
+        if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+            }
+        }
+    }   
+  </script>
 </body>
 </html>
